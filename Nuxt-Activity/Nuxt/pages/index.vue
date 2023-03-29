@@ -1,9 +1,23 @@
 <template>
-  <Tutorial/>
+  <div>
+    <NavBar />
+    <homePage/>
+    <AboutPage />
+    <SkillsPage />
+  </div>
 </template>
 
 <script>
 export default {
-  name: 'IndexPage'
-}
+    
+  }
 </script>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+</style>
