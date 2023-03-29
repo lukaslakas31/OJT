@@ -1,4 +1,4 @@
-# test
+# This is my nuxt-folder, im trying to explore nuxt-js and ant design in front end
 
 ## Build Setup
 
