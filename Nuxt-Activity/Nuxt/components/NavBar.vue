@@ -2,7 +2,7 @@
     <a-menu class="navbar" mode="horizontal" :default-selected-keys="[current]">
     <a-menu-item class="logo">
         <a href="/">
-          insert logo_
+          insert <span>logo_</span>
         </a>
     </a-menu-item>
     <a-menu-item key="home">
@@ -29,11 +29,12 @@
   </script>
   
   <style>
-.logo {
-    float: left;
-    position: fixed;
+span {
+    color: blue;
 }
+
 .ant-menu {
+    color: black;
     display: flex;
     justify-content: right;
 } 

@@ -1,7 +1,7 @@
 <template>
   <div>
     <NavBar />
-    <homePage/>
+    <HomePage/>
     <AboutPage />
     <SkillsPage />
   </div>
@@ -20,4 +20,6 @@ export default {
     padding: 0;
     font-family: 'Poppins', sans-serif;
 }
+
+
 </style>
