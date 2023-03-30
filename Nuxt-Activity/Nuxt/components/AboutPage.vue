@@ -5,7 +5,6 @@
           <h1><span>About </span> Me:</h1>
           <ul>
              <li v-for="(item, index) in items" :key="index"> {{ item }} </li>
-             
           </ul>
           <div class="button">
                 <a-button @click="MoreButton"> More Info! </a-button>

@@ -60,12 +60,13 @@ mounted (){
   color: black;
 }
 
+
 .icon {
   display: flex;
   justify-content: space-evenly;
 }
 .homeContents {
-  /* border: 5px yellow solid; */
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -84,15 +85,14 @@ mounted (){
   
 /* text */
 .homeContents2 {
-  /* border: 1px red solid; */
   display: flex;
   justify-content: center;
   flex-direction: column;
 }
 /* image */
 .homeContents3 {
+
   display: flex;
-  bottom: 900px;
   
 }
 </style>
