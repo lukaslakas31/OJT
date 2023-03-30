@@ -14,9 +14,8 @@
               </div>
           </div>
           <div class="homeContents3">
-            <img src="@/static/try.png" alt="Seeun">
+            <img src="@/static/images/try.png" alt="Seeun">
           </div>
-          
         </div>
       </div>
     </a-layout-content>
@@ -83,13 +82,14 @@ mounted (){
   }
 } 
   
-
+/* text */
 .homeContents2 {
   /* border: 1px red solid; */
   display: flex;
   justify-content: center;
   flex-direction: column;
 }
+/* image */
 .homeContents3 {
   display: flex;
   bottom: 900px;

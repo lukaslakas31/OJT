@@ -3,14 +3,15 @@
     <NavBar />
     <HomePage/>
     <AboutPage />
-    <SkillsPage />
+    <SkillsPage /> 
   </div>
 </template>
 
 <script>
 export default {
-    
-  }
+ 
+}
+  
 </script>
 
 <style>

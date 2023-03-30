@@ -26,11 +26,12 @@
     },
 
   }
+
   </script>
   
   <style>
 span {
-    color: blue;
+    color: #3747d3;
 }
 
 .ant-menu {
