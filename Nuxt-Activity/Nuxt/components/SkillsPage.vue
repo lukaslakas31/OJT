@@ -1,11 +1,12 @@
 <template>
   <a-layout-content>
     <div class="skillsContainer">
-      <div class="skillsContent" style=" padding: 20px;">
+      <div class="skillsContent" style="padding: 20px;">
+        <h1>My Technical <span>Skills:</span></h1>
         <a-row :gutter="16">
           <template v-for="(skill, index) in skills">
             <a-col :xs="24" :sm="12" :md="8" :lg="6" :xl="4">
-              <a-card :hoverable="true" :title="skill.title" :key="index">
+              <a-card :hoverable="true" :title="skill.title" :key="index" style="border: none; background-color: #FFFFFF; box-shadow: 0 2px 10px #ededed;">
                 <p>{{ skill.content }}</p>
               </a-card>
             </a-col>
@@ -22,28 +23,28 @@ export default {
     return {
       skills: [
         {
-          title: 'C',
+          title: 'C_',
           content: 'C is a programming language used for system programming and embedded system',
         },
         {
-          title: 'Python',
+          title: 'Python_',
           content: 'Python is a high-level language often used for data analysis and scripting',
         },
       
         {
-          title: 'HTML',
+          title: 'HTML_',
           content: 'HTML and CSS are markup languages used for creating web pages',
         },
         {
-          title: 'CSS',
+          title: 'CSS_',
           content: 'HTML and CSS are markup languages used for creating web pages',
         },
         {
-          title: 'JavaScript',
+          title: 'JavaScript_',
           content: 'JavaScript is a high-level dynamic scripting language used for web development',
         },
         {
-          title: 'Vue.js',
+          title: 'Vue.js_',
           content: 'Vue.js is a progressive JavaScript framework used for building user interfaces.',
         },
       ],
@@ -63,4 +64,14 @@ export default {
 .skillsContent {
   flex-direction: column;
 } 
+.skillsContent h1{
+  font-size: 2em;
+} 
+.skillsContent span{
+  color: #ff2b63;
+}
+.ant-card-head-title {
+  color: #3747d3;
+  font-size: 1.4em;
+}
 </style>
