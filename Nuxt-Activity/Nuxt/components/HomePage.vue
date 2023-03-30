@@ -8,9 +8,10 @@
           <p> this is my portfolio Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
             Ipsam id sequi cupiditate quis eum quibusdam esse veniam est delectus blanditiis.</p>
               <div class="icon">
-                <nuxt-link to="facebook.com/ljmg31" target="_blank"> <a-icon style="color:black; font-size:x-large" type="facebook"/> </nuxt-link>
-                <nuxt-link to="facebook.com/ljmg31" target="_blank"> <a-icon style="color:black; font-size:x-large" type="linkedin"/> </nuxt-link>
-                <nuxt-link to="facebook.com/ljmg31" target="_blank"> <a-icon style="color:black; font-size:x-large"  type="github"/> </nuxt-link>
+                
+                <a href="https://www.facebook.com/LJMG31"  target="_blank"> <a-icon style="color:black; font-size:x-large" type="facebook"/> </a>
+                <a href="https://www.linkedin.com/in/luke-galicia-b01b721b5/" target="_blank"> <a-icon style="color:black; font-size:x-large" type="linkedin"/> </a>
+                <a href="https://github.com/lukaslakas31" target="_blank"> <a-icon style="color:black; font-size:x-large"  type="github"/> </a>
               </div>
           </div>
           <div class="homeContents3">
