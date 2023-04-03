@@ -1,4 +1,6 @@
 <template>
+
+    
     <a-menu class="navbar" mode="horizontal" :default-selected-keys="[current]">
     <a-menu-item class="logo">
         <a href="/">
@@ -15,6 +17,9 @@
          <nuxt-link to="/"><a-icon type="code"/>Skills</nuxt-link>
     </a-menu-item>
     </a-menu>
+ 
+
+    
   </template>
   
   <script>
@@ -45,6 +50,12 @@ span {
     justify-content: center;
     align-items: center;
 } 
+@media screen and (max-width: 500px) {
+  li.logo.ant-menu-item {
+  display: none;
+}
+} 
+
 
   </style>
   

@@ -46,7 +46,7 @@
               'My favorite anime is: One Piece (1997)',
               'My favorite food is: Katsudon',
               'My favorite series is: The Last Of Us (2023)',
-              'My favorite movie is: BTS the Movie',
+              'My favorite movie is: Avatar the way of the water (2023)',
             ];
             this.isMoreInfo = true;
           }
@@ -85,7 +85,28 @@
   .aboutImage img {
     max-width: 50%;
   }
-  @media screen and (max-width: 719px) {
+ 
+@media screen and (max-width: 1000px) {
+  .aboutContainer {
+    flex-direction: column;
+  }
+  .aboutContent{
+    margin-left: 0px;
+  }
+  .aboutImage {
+    margin-left: 0px;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+  }
+  .aboutContent h1 {
+    font-size: 1.5em;
+  }
+  .aboutContent ul{
+      font-size: 1.5em;
+  }
+} 
+@media screen and (max-width: 719px) {
   .aboutContainer {
     flex-direction: column;
   }
@@ -98,10 +119,22 @@
     align-items: center;
   }
   .aboutContent h1 {
-    font-size: 2.5em;
+    font-size: 2em;
   }
   .aboutContent ul{
       font-size: 1.5em;
   }
+  @media screen and (max-width: 500px) {
+
+  .aboutContent h1 {
+    font-size: 1.5em;
+  }
+  .aboutContent ul{
+      font-size: 1em;
+  }
+  .aboutImage {
+    width: 100%;
+  }
 } 
+}
   </style>

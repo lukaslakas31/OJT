@@ -74,4 +74,5 @@ export default {
   color: #3747d3;
   font-size: 1.4em;
 }
+
 </style>

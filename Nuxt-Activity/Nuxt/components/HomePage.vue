@@ -74,6 +74,16 @@ mounted (){
   min-height: 100vh;
 
 }
+@media screen and (max-width: 1000px){
+  .homeContents {
+    flex-direction: column;
+  }
+  .homeContents3 {
+    justify-content: center;
+    align-items: center;
+  }
+  
+}
 @media screen and (max-width: 719px) {
   .homeContents {
     flex-direction: column;
