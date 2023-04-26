@@ -1,23 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+
 
 void main() {
   runApp(
     const MaterialApp(
-      home: MyApp()
-      )
-      );
+      debugShowCheckedModeBanner: false,
+      home: Navbar(),
+    ),
+  );
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class HomePage extends StatelessWidget {
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: const Color.fromRGBO(255, 137, 118, 100),
-        title: const Text("Activity #1 Application"),
-      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -106,6 +105,75 @@ class MyApp extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+}
+
+class SkillPage extends StatefulWidget {
+  const SkillPage({super.key});
+
+  @override
+  State<SkillPage> createState() => _SkillPageState();
+}
+
+class _SkillPageState extends State<SkillPage> {
+  @override
+  Widget build(BuildContext context) {
+    return const Scaffold(
+      // enter code here
+    );
+  }
+}
+
+class ContactPage extends StatelessWidget {
+  const ContactPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Scaffold(
+        // enter code here
+        );
+  }
+}
+
+class Navbar extends StatefulWidget {
+  const Navbar({Key? key}) : super(key: key);
+
+  @override
+  State<Navbar> createState() => _NavbarState();
+}
+
+class _NavbarState extends State<Navbar> {
+  int _selectedIndex = 0;
+
+  static const List<Widget> _widgetOptions = <Widget>[
+    HomePage(),
+    SkillPage(),
+    ContactPage(),
+  ];
+
+  static const List<Widget> _titleOptions = <Widget>[
+    Text("About Me"),
+    Text("My Skills"),
+    Text("Contact Me"),
+  ];
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: const Color.fromRGBO(255, 137, 118, 100),
+        title: _titleOptions.elementAt(_selectedIndex),
+      ),
+      body: Center(
+        child: _widgetOptions.elementAt(_selectedIndex),
+      ),
       bottomNavigationBar: BottomNavigationBar(
         items: const [
           BottomNavigationBarItem(
@@ -114,13 +182,16 @@ class MyApp extends StatelessWidget {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.construction),
-            label: 'Skills ',
+            label: 'Skills',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.call),
             label: 'Contact Me',
           ),
         ],
+        currentIndex: _selectedIndex,
+        selectedItemColor: const Color.fromRGBO(255, 137, 118, 100),
+        onTap: _onItemTapped,
       ),
     );
   }
