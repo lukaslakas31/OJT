@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-
+import 'dart:convert';
 
 void main() {
   runApp(
@@ -109,19 +109,77 @@ class HomePage extends StatelessWidget {
   }
 }
 
-class SkillPage extends StatefulWidget {
-  const SkillPage({super.key});
+class GalleryPage extends StatefulWidget {
+  const GalleryPage({super.key});
 
   @override
-  State<SkillPage> createState() => _SkillPageState();
+  State<GalleryPage> createState() => _GalleryPageState();
 }
 
-class _SkillPageState extends State<SkillPage> {
+class _GalleryPageState extends State<GalleryPage> {
+  List<dynamic> _galleryData = [];
+
+  Future<void> _fetchData() async {
+    final response = await http
+        .get(Uri.parse('https://jsonplaceholder.typicode.com/photos'));
+    setState(() {
+      _galleryData = jsonDecode(response.body).take(20).toList();
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _fetchData();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: _galleryData.isEmpty
+            ? const CircularProgressIndicator()
+            : Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const SizedBox(height: 20),
+                  Expanded(
+                    child: ListView.builder(
+                      itemCount: _galleryData.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        return Card(
+                          child: Column(
+                            children: [
+                              Image.network(
+                                _galleryData[index]['url'],
+                                fit: BoxFit.cover,
+                                width: double.infinity,
+                                height: 200,
+                              ),
+                              ListTile(
+                                title: Text(_galleryData[index]['title']),
+                              ),
+                            ],
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+                ],
+              ),
+      ),
+    );
+  }
+}
+
+class SkillsPage extends StatelessWidget {
+  const SkillsPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      // enter code here
-    );
+        // enter code here
+        );
   }
 }
 
@@ -148,12 +206,14 @@ class _NavbarState extends State<Navbar> {
 
   static const List<Widget> _widgetOptions = <Widget>[
     HomePage(),
-    SkillPage(),
+    GalleryPage(),
+    SkillsPage(),
     ContactPage(),
   ];
 
   static const List<Widget> _titleOptions = <Widget>[
     Text("About Me"),
+    Text("Gallery"),
     Text("My Skills"),
     Text("Contact Me"),
   ];
@@ -181,6 +241,10 @@ class _NavbarState extends State<Navbar> {
             label: 'About Me',
           ),
           BottomNavigationBarItem(
+            icon: Icon(Icons.photo_rounded),
+            label: 'Gallery',
+          ),
+          BottomNavigationBarItem(
             icon: Icon(Icons.construction),
             label: 'Skills',
           ),
@@ -190,6 +254,7 @@ class _NavbarState extends State<Navbar> {
           ),
         ],
         currentIndex: _selectedIndex,
+        unselectedItemColor: const Color.fromRGBO(127, 131, 137, 100),
         selectedItemColor: const Color.fromRGBO(255, 137, 118, 100),
         onTap: _onItemTapped,
       ),
