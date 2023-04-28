@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
-import 'dart:convert';
+import 'package:dio/dio.dart';
+import 'dart:developer';
 
 void main() {
   runApp(
@@ -120,11 +120,16 @@ class _GalleryPageState extends State<GalleryPage> {
   List<dynamic> _galleryData = [];
 
   Future<void> _fetchData() async {
-    final response = await http
-        .get(Uri.parse('https://jsonplaceholder.typicode.com/photos'));
-    setState(() {
-      _galleryData = jsonDecode(response.body).take(20).toList();
-    });
+    final dio = Dio();
+    try {
+      final response =
+          await dio.get('https://jsonplaceholder.typicode.com/photos');
+      setState(() {
+        _galleryData = List<dynamic>.from(response.data).take(20).toList();
+      });
+    } catch (e) {
+      log('Error fetching data: $e');
+    }
   }
 
   @override
