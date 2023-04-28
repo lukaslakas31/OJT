@@ -27,7 +27,6 @@ class _GalleryPageState extends State<GalleryPage> {
     }
   }
 
-
   Future<void> _likeImage(int index) async {
     String? likes =
         await _storage.read(key: 'likes${_galleryData[index]["id"]}');
@@ -61,7 +60,7 @@ class _GalleryPageState extends State<GalleryPage> {
                         return Card(
                           child: Column(
                             children: [
-                              GestureDetector(
+                              InkWell(
                                 child: Image.network(
                                   _galleryData[index]['url'],
                                   fit: BoxFit.cover,
@@ -86,6 +85,17 @@ class _GalleryPageState extends State<GalleryPage> {
                                     return const Text('0 likes');
                                   },
                                 ),
+                              ),
+                              TextButton(
+                                onPressed: () async {
+                                  await _likeImage(index);
+                                },
+                                child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: const [
+                                      Icon(Icons.favorite),
+                                      Text(' Like'),
+                                    ]),
                               ),
                             ],
                           ),
