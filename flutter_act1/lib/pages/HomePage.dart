@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -9,16 +8,10 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final FlutterSecureStorage _storage = const FlutterSecureStorage();
-  
-
   @override
   void initState() {
     super.initState();
-
   }
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -27,16 +20,16 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: const [
-             CircleAvatar(
+            CircleAvatar(
               radius: 100,
               backgroundImage: AssetImage('assets/images/profile.jpg'),
             ),
-             SizedBox(height: 16),
-             Text(
+            SizedBox(height: 16),
+            Text(
               'Luke Juniel M. Galicia',
               style: TextStyle(fontSize: 30),
             ),
-             Card(
+            Card(
               margin: EdgeInsets.symmetric(
                 vertical: 10.0,
                 horizontal: 25.0,
@@ -54,7 +47,7 @@ class _HomePageState extends State<HomePage> {
                 subtitle: Text("Studying BS Computer Science"),
               ),
             ),
-             Card(
+            Card(
               margin: EdgeInsets.symmetric(
                 vertical: 10.0,
                 horizontal: 25.0,
@@ -72,7 +65,7 @@ class _HomePageState extends State<HomePage> {
                 subtitle: Text("Learning vue.js, flutter and more!"),
               ),
             ),
-             Card(
+            Card(
               margin: EdgeInsets.symmetric(
                 vertical: 10.0,
                 horizontal: 25.0,
